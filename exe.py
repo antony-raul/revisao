@@ -19,17 +19,17 @@ Observações:
 
 
 passageiros=[]
-onibus = [passageiros]
-terminal = [onibus]
-print(terminal)
+onibus = []
 
 
-def criaOnibus(placa,origem,destino,hora,passageiros):
+
+def criaOnibus(placa,origem,destino,hora,listPassageiros):
     return{
         'placa': placa,
         'origem': origem,
         'destino': destino,
         'hora': hora,
+        'listPassageiros': listPassageiros
         
 
     }
@@ -46,6 +46,7 @@ def adicionarOnibus():
     origem = input('Digite a origem do onibus: ')
     destino = input('Digite a destino do onibus: ')
     hora = input('Digite a hora da chegada: ')
+    listPassageiros = passageiros
     
 
     bus = criaOnibus(placa, origem, destino, hora,passageiros)
@@ -62,7 +63,10 @@ def adicionarPassageiro():
 '''def removerOnibus():
     placa = input('Digite a placa do onibus: ')'''
     
-
+adicionarOnibus()
+print(onibus)
+adicionarPassageiro()
+print(onibus)
 
 
 

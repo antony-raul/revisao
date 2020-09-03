@@ -49,24 +49,36 @@ def adicionarOnibus():
     listPassageiros = passageiros
     
 
-    bus = criaOnibus(placa, origem, destino, hora,passageiros)
+    bus = criaOnibus(placa, origem, destino, hora,listPassageiros)
     onibus.append(bus)
 
 def adicionarPassageiro():
     nome = input('Digite nome do passageiro: ')
     cpf = input('Digite o cpf do passageiro: ')
+    placaBus = input('Digite a placa do onibus que vai viajar: ')
     
 
     passa =criaPassageiro(nome, cpf)
-    onibus.append(passageiros.append(passa))
+    for o in onibus:
+        if placaBus == o['placa']:
+            print(o)
+            o['listPassageiros'].append(passa)
+
+        
+    
+    
 
 '''def removerOnibus():
     placa = input('Digite a placa do onibus: ')'''
-    
+
+
+adicionarOnibus()
+print(onibus)
 adicionarOnibus()
 print(onibus)
 adicionarPassageiro()
 print(onibus)
+
 
 
 

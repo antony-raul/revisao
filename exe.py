@@ -19,8 +19,9 @@ Observações:
 
 
 passageiros=[]
-onibus = []
-
+onibus = [passageiros]
+terminal = [onibus]
+print(terminal)
 
 
 def criaOnibus(placa,origem,destino,hora,passageiros):
@@ -58,15 +59,11 @@ def adicionarPassageiro():
     passa =criaPassageiro(nome, cpf)
     onibus.append(passageiros.append(passa))
 
-def removerOnibus():
-    placa = input('Digite a placa do onibus: ')
-    onibus.remove(placa)
+'''def removerOnibus():
+    placa = input('Digite a placa do onibus: ')'''
+    
 
 
-print(onibus)
-adicionarOnibus()
-print(onibus)
-removerOnibus()
-print(onibus)
+
 
 

@@ -62,6 +62,14 @@ def adicionarPassageiro():
             print(o)
             o['listPassageiros'].append(passa)
 
+"""
+Remover Onibus
+"""
+
+def removerOnibus():
+     onibus = input('Qual ônibus você gostaria de remover?')
+     onibus = input()
+     onibus.removerOnibus()
         
 while True:
     op= int(input("1-Adicionar Ônibus\n2-Remover Ônibus\n3-Vender Passagem\n4-Devolver Passagem\n5-Imprimir\n"))

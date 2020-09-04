@@ -4,7 +4,7 @@ em cada Ônibus os seus Passageiro. Cada Ônibus possui, placa, origem, destino,
 além da sua lista de Passageiro. Cada Passageiro possui apenas o CPF.
 O programa deve:
 1-Adicionar Ônibus ok
-2-Remover Ônibus
+2-Remover Ônibus ok
 3-Vender Passagem ok
 4-Devolver Passagem
 5-Imprimir
@@ -15,27 +15,25 @@ Observações:
   quando abrir o programa todas as informações devem ser carregadas.
 """
 
+Listonibus = []
 
 
-onibus = []
-
-
-
-def criaOnibus(placa,origem,destino,hora,listPassageiros):
-    return{
+def criaOnibus(placa, origem, destino, hora, listPassageiros):
+    return {
         'placa': placa,
         'origem': origem,
         'destino': destino,
         'hora': hora,
         'listPassageiros': listPassageiros
-        
 
     }
-def criaPassageiro(nome,cpf):
-    return{
+
+
+def criaPassageiro(nome, cpf):
+    return {
         'nome': nome,
         'cpf': cpf,
-        
+
     }
 
 
@@ -44,40 +42,48 @@ def adicionarOnibus():
     origem = input('Digite a origem do onibus: ')
     destino = input('Digite a destino do onibus: ')
     hora = input('Digite a hora da chegada: ')
-    listPassageiros =[]
-    
+    listPassageiros = []
 
-    bus = criaOnibus(placa, origem, destino, hora,listPassageiros)
-    onibus.append(bus)
+    bus = criaOnibus(placa, origem, destino, hora, listPassageiros)
+    Listonibus.append(bus)
+
 
 def adicionarPassageiro():
     nome = input('Digite nome do passageiro: ')
     cpf = input('Digite o cpf do passageiro: ')
     placaBus = input('Digite a placa do onibus que vai viajar: ')
-    
 
-    passa =criaPassageiro(nome, cpf)
-    for o in onibus:
+    passa = criaPassageiro(nome, cpf)
+    for o in Listonibus:
         if placaBus == o['placa']:
             print(o)
             o['listPassageiros'].append(passa)
+
 
 """
 Remover Onibus
 """
 
+
 def removerOnibus():
-     onibus = input('Qual ônibus você gostaria de remover?')
-     onibus = input()
-     onibus.removerOnibus()
-        
+    placa = input('Digite a placa do ônibus você gostaria de remover?')
+
+    for onibus in Listonibus:
+        if placa == onibus['placa']:
+
+            Listonibus.remove(onibus)
+            print(Listonibus) #Retornando lista atualizada
+
+
+
+
 while True:
-    op= int(input("1-Adicionar Ônibus\n2-Remover Ônibus\n3-Vender Passagem\n4-Devolver Passagem\n5-Imprimir\n"))
+    op = int(input("1-Adicionar Ônibus\n2-Remover Ônibus\n3-Vender Passagem\n4-Devolver Passagem\n5-Imprimir\n"))
     if op == 1:
         adicionarOnibus()
         print("onibus adicionado")
     if op == 2:
-        '''chmar função'''
+        removerOnibus()
         print("onibus removido")
     if op == 3:
         adicionarPassageiro()
@@ -86,7 +92,4 @@ while True:
         '''chmar função'''
         print("passagem devolvida")
     if op == 5:
-        print(onibus)
-
-
-
+        print(Listonibus)

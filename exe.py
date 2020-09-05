@@ -63,8 +63,6 @@ def adicionarPassageiro():
 """
 Remover Onibus
 """
-
-
 def removerOnibus():
     placa = input('Digite a placa do ônibus você gostaria de remover?')
 
@@ -74,7 +72,22 @@ def removerOnibus():
             Listonibus.remove(onibus)
             print(Listonibus) #Retornando lista atualizada
 
+"""
+Devolver Passagem
+"""
 
+def devolverPassagem():
+    placa = input('Digite a placa do ônibus você gostaria de remover?')
+    cpf = input('Digite o cpf do passageiro que você gostaria de remover?')
+    print(cpf)
+    for onibus in Listonibus:
+        if placa == onibus['placa']:
+            for passageiro in onibus['listPassageiros'] :
+                 if cpf == passageiro['cpf']:
+                    print(passageiro)
+                    onibus['listPassageiros'].remove(passageiro)
+                    #print(onibus['listPassageiro']) #Retornando lista atualizada
+                    print(Listonibus)
 
 
 while True:
@@ -89,7 +102,7 @@ while True:
         adicionarPassageiro()
         print("passagem vendida")
     if op == 4:
-        '''chmar função'''
+        devolverPassagem()
         print("passagem devolvida")
     if op == 5:
         print(Listonibus)

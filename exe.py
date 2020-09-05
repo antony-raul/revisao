@@ -12,7 +12,7 @@ Observações:
 - Não deve existir mais de um Ônibus com a mesma placa;
 - Não deve existir mais de um Passageiro com o mesmo CPF em um mesmo Ônibus.
 - Todas as informações devem ser persistentes, ou seja, quando fechar o programa tudo deve ser salvo e
-  quando abrir o programa todas as informações devem ser carregadas.
+  quando abrir o programa todas as informações devem ser carregadascd.
 """
 
 Listonibus = []

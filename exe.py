@@ -6,7 +6,7 @@ O programa deve:
 1-Adicionar Ônibus ok
 2-Remover Ônibus ok
 3-Vender Passagem ok
-4-Devolver Passagem
+4-Devolver Passagem ok
 5-Imprimir
 Observações:
 - Não deve existir mais de um Ônibus com a mesma placa;
@@ -14,7 +14,11 @@ Observações:
 - Todas as informações devem ser persistentes, ou seja, quando fechar o programa tudo deve ser salvo e
   quando abrir o programa todas as informações devem ser carregadascd.
 """
-
+"""
+Dupla: 
+Antony Raul
+Maria Beatriz
+"""
 Listonibus = []
 
 
